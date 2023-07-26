@@ -1,5 +1,5 @@
 - name: Install nginx
-  hosts: all
+  hosts: all         #Installs on all ip's present in each group#
   become: yes
   tasks:
     - name: Install nginx
