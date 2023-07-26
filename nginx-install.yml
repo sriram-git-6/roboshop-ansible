@@ -11,3 +11,10 @@
       ansible.builtin.systemd:
         name: nginx
         state: restarted
+
+
+- name: Install nginx
+  hosts: all         #Installs on all ip's present in each group#
+  become: yes
+  roles:
+    - sample-nginx
