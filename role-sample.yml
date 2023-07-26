@@ -1,0 +1,5 @@
+- name: Print message using role
+  hosts: all
+  become: true
+  roles:
+    - role-intro
