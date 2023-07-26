@@ -1,4 +1,4 @@
-- name: Print message using role
+- name: Print the message using role
   hosts: all
   become: true
   roles:
