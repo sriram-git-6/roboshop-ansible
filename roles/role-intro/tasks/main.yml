@@ -5,3 +5,7 @@
 - name: print the variable from role
   ansible.builtin.debug:
     msg: url is "{{URL}}"
+
+- name: print the variable from play level
+  ansible.builtin.debug:
+    msg: url_play is "{{ URL_Play}}"

@@ -1,0 +1,7 @@
+- name: To print the variables from play level
+  hosts: all
+  become: true
+  vars:
+    URL_Play: play.role.com
+  roles:
+    - role-intro
