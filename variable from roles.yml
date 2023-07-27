@@ -1,0 +1,5 @@
+- name: variable from roles
+  hosts: all
+  become: true
+  roles:
+    - role-intro

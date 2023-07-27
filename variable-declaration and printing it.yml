@@ -7,3 +7,37 @@
     - name: print the variable
       ansible.builtin.debug:
         msg: URL is {{URL}}
+
+ # The above variable is defined as play level varaible
+ # In ansible variable is accessed using {{ }}-->double flower braces
+ # Ansible supports double quotes and single quotes also, however quotes are not mandatory in all cases
+ # Quotes are mandatory if value starts with variable means
+ # msg: {{ URL }} ---> requires quoting
+ # msg: URL is {{ URL }} ---> starting with string doesnot require quoting
+
+- name: variable
+  hosts: all
+  become: yes
+  tasks:
+    - name: print the variable
+      ansible.builtin.debug:
+        msg: URL is {{URL}}
+      vars:
+        URL: google.com
+
+ # The above variable is defined as task level variable only that task can access.
+
+# Access variabes from the file
+
+- name: variable
+  hosts: all
+  become: yes
+  vars_files:
+    - exvars.yml      #file name and that should contain the value for URL, means URL=file.example.com like that.
+  tasks:
+    - name: print the variable
+      ansible.builtin.debug:
+        msg: URL is {{URL}}
+
+  # vars_files doesnot support task level it is only on play level. All the tasks in that particular play can access.
+
