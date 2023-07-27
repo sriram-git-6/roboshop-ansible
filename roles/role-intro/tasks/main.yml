@@ -2,10 +2,17 @@
   ansible.builtin.debug:
     msg: hello-world
 
+# after executing the playbook it comes to this respective role and executes the debug cmnd
+
 - name: print the variable from role
   ansible.builtin.debug:
     msg: url is "{{URL}}"
 
+# after executing the playbook it comes to this respective role and goes to vars folder and takes the variable value
+# and prints the output
+
 - name: print the variable from play level
   ansible.builtin.debug:
     msg: url_play is "{{ URL_Play}}"
+
+# variable is defined in play itself
