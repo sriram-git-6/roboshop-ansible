@@ -2,7 +2,7 @@
   ansible.builtin.debug:
     msg: hello-world
 
-# after executing the playbook it comes to this respective role and executes the debug cmnd
+# after executing the playbook it comes to this respective role and executes the debug command
 
 - name: print the variable from role
   ansible.builtin.debug:
